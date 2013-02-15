@@ -1,0 +1,61 @@
+Lists
+-----
+
+1) Why?
+
+Computing averages:
+
+(1 + 2 + 3) / 3
+(1 + 2 + 4 + 8 + 9 + 6 + 8 + 9) / 8
+
+bored yet? We are.
+
+We can store as many numbers as we want in a list!
+grades = [95, 80, 60, 30, 20]
+
+Accessing elements
+------------------
+
+print grades[0]
+print grades[0] + grades[1]
+
+Average:
+sum = (grades[0] + grades[1] + grades[2] + grades[3] + grades[4])
+print float(sum) / 5
+
+What if you don't want to count the number
+yourself?
+
+print len(grades)
+
+Can rewrite as:
+print float(sum) / len(grades)
+
+
+print len([2])
+print len([2,3,4])
+print len("Eric")
+
+
+Changing elements
+-----------------
+
+Timmy whined about his midterm score
+
+grades = [90, 80, 20]
+
+print grades[2]
+
+grades[2] = 60
+
+print grades
+
+What can you do with a list?
+(flow control)
+----------------------------
+
+
+grades = [90, 80, 20]
+
+for grade in grades:
+    print "The grade is " + grade
