@@ -3,59 +3,93 @@ Lists
 
 1) Why?
 
-Computing averages:
+Let's say you need a program to compute a student's average grade.
+Students have completed three homework exercises so far. Here's
+a function that will do that:
 
-(1 + 2 + 3) / 3
-(1 + 2 + 4 + 8 + 9 + 6 + 8 + 9) / 8
+  def average(hw1, hw2, hw3):
+      return (hw1 + hw2 + hw3) / 3
 
-bored yet? We are.
+See the problem yet? What if there's a quiz and another homework
+assignment?
+
+  def average(hw1, hw2, hw3, quiz, hw4):
+      return (hw1 + hw2 + hw3 + quix + hw4) / 3
+
+Uh-oh. Programmers hate this kind of code: you're stuck in a perpetual
+loop of trying to adjust the program to fit the ever-changing
+requirements. You can't win...
+
+...or can you?
 
 We can store as many numbers as we want in a list!
-grades = [95, 80, 60, 30, 20]
+
+  grades = [95, 80, 60, 30, 20]
 
 Accessing elements
 ------------------
 
-print grades[0]
-print grades[0] + grades[1]
+Accessing individual elements of a list is easy:
 
-Average:
-sum = (grades[0] + grades[1] + grades[2] + grades[3] + grades[4])
-print float(sum) / 5
+  print grades[0]
+  print grades[0] + grades[1]
 
-What if you don't want to count the number
-yourself?
+Here's one way to compute the average of these five numbers:
 
-print len(grades)
+  total = (grades[0] + grades[1] + grades[2] + grades[3] + grades[4])
+  print float(total) / 5
+
+(Remember from the tutorial? Python 2 does integer division by
+default, which is *not* what you might expect from calculators or
+elementary school. So you have to convert 'total' to a floating-point
+number to get "real" division.)
+
+What if you don't want to count the number yourself?
+
+  print len(grades)
 
 Can rewrite as:
-print float(sum) / len(grades)
 
+  print float(total) / len(grades)
 
-print len([2])
-print len([2,3,4])
-print len("Eric")
+But there's stil a problem with this code. It only works on lists with
+five elements. Pass a list with four or six elements, and it won't
+work. So we haven't really solved the problem with the previous
+average() function yet.
 
+Iteration
+---------
+
+Really fixing the problem requires a new concept: iteration. Iteration
+just means to do something over and over again on a list of similar
+items.
+
+Iteration in Python is done with a "for loop". Here's a simple example:
+
+  grades = [85, 68, 75]
+  for grade in grades:
+      print "grade =", grade
+
+Computing the sum of a list of numbers is not much harder than that.
+So here's an even better way to compute the average of a student's
+grades:
+
+  def average(grades):
+      total = 0
+      for grade in grades:
+          total = total + grade
+      return float(total) / len(grades)
 
 Changing elements
 -----------------
 
-Timmy whined about his midterm score
+Now, what if little Timmy flunks his midterm, and then whines about
+it? Obviously you have to change his grade!
 
-grades = [90, 80, 20]
+  grades = [90, 80, 20]    # somebody didn't study enough
 
-print grades[2]
+  print grades[2]
 
-grades[2] = 60
+  grades[2] = 60           # poof! all better, like magic
 
-print grades
-
-What can you do with a list?
-(flow control)
-----------------------------
-
-
-grades = [90, 80, 20]
-
-for grade in grades:
-    print "The grade is " + grade
+  print grades
