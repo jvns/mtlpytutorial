@@ -1,0 +1,47 @@
+Hello!
+
+Thank you for signing up for the Montreal Python Workshop taking place
+this weekend, February 22-23. The purpose of this email is to confirm
+your attendance and make sure you bring what is necessary. So please
+read it carefully and reply with answers to each question below.
+
+* Are you able to spend Friday evening (6:00pm until 9:00pm) and all
+  day Saturday (9:30am until 4:30pm) at the workshop?
+
+* Do you have a laptop computer that you can bring for the entire
+  workshop?
+
+* Are you able to install software on that laptop?
+
+* What operating system is that laptop running? (E.g. "Mac OS X 10.6",
+  "Windows 7", "Ubuntu 12.04", ...)
+
+* Do you have any special dietary requirements? (Lunch on Saturday is
+  courtesy of the Python Software Foundation.)
+
+The workshop will be at Notman House, 51 Sherbrooke St West, at the
+corner with Clark. The building is undergoing some renovations, so do
+not be alarmed if the front door looks a little worn. It's fine
+inside, come right in. ;-)
+
+Friday evening is largely self-guided, and should take between two and
+three hours. So it's OK if you don't show up until 6:30 or so. Note
+that we're *not* providing food for Friday.
+
+Saturday morning is more structured: the doors will open at 9:30, and
+the lecture will start at 10:00 sharp. Please arrive on time!
+
+One last thing: you may not have heard about it, but there's been a
+big movement in the last couple of years to make the software industry
+more diverse and more welcoming to newcomers. As part of that
+movement, we have a formal code of conduct for this event which is
+closely based on the code of conduct used for much larger conferences.
+In a nutshell: don't be mean, don't laugh at people, and don't be a
+jerk. If you can't follow those simple rules, we will ask you to
+leave.
+
+If you want to see the long, detailed version:
+
+  https://openhatch.org/wiki/Montreal_Python_Workshop/Code_of_Conduct
+
+Thanks, and see you Friday!
