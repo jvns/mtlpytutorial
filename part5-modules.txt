@@ -1,0 +1,88 @@
+Modules
+=======
+
+* programmers hate writing the same code multiple times
+* we especially hate fixing the same bug multiple times
+* in other words, we are really big on *reusing* code
+
+* you've already seen the most basic element of code reuse:
+  the function
+* functions let you store one sequence of instructions and
+  use it again later, possibly many times
+* the functions we've seen so far all live in the same
+  file as the code calling them -- one script
+* but typically, programmers write many scripts -- each one to do
+  one particular task
+* so how do you reuse code between different scripts?
+* the answer: modules!
+
+* what's even better is you don't have to write your own modules
+  to benefit from code reuse
+* Python ships with hundreds of useful modules in its standard library
+* and there are tens of thousands more out there on the Internet that
+  you can use
+* so even if you never write a single module of your own, you need to
+  know about modules
+
+* let's take a look at one handy, easy-to-use module in Python's
+  standard library: it's called random
+* first thing you need to know about is importing modules
+
+    import random
+
+* huh. that didn't do anything. oh wait, actually it did:
+
+    print random
+
+  See: import defines a new name, just like assigning a variable or
+  defining a function. A name references something you can print, in
+  this case a module.
+
+* before we go too far into this, I want you to lookup this module
+  in the standard library documentation. This is a gold mine of
+  information.
+
+    [web http://docs.python.org/release/2.7/]
+
+  By the way, if you're running a different major version -- 2.6, say
+  -- you should read the docs for that version. It's really annoying
+  reading about features that don't exist in the version you're using.
+
+* Once you've got that page loaded, look for "Global Module Index" and
+  follow that link, then go down to "r" and click on "random", since
+  that's the module we want to learn about
+
+* OK, good enough. Don't get sucked into reading that; all you'll
+  learn is that the guy who wrote the random module is a math geek par
+  excellence, and that he knows far, far more about random number
+  generation than you or I ever will. That's a *good thing*: it means
+  you can safely use this code in your application without worrying
+  about how good it is. It's good. That's why it's in the standard
+  library.
+
+* Instead, here's a tiny example of using the random module
+
+    print random.randint(1, 10)
+    print random.randint(1, 10)
+    print random.randint(1, 10)
+
+* And here's how to get a short explanation:
+
+    help(random.randint)
+
+* Great. Turns out that generating random integers is important, but
+  it's usually not what you really want to do. Usually you have a list
+  of items and you want to do something random to them. Like, say you've
+  got this rack of letters in a Scrabble game:
+
+    letters = ['E', 'P', 'R', 'U', 'L', 'A', 'E']
+
+  and you want to see some different orderings of this rack:
+
+    random.shuffle(letters) ; print letters
+    random.shuffle(letters) ; print letters
+    random.shuffle(letters) ; print letters
+
+  or, you want to pick one letter at random:
+
+    random.choice(letters)
