@@ -1,0 +1,330 @@
+Part 1: Review from Friday
+==========================
+
+Math
+----
+
+We can use Python like a calculator!
+
+    1 + 2
+    10 + 5
+    2 * 3
+    4 / 2
+    1 / 2 # unexpected!
+    1.0 / 2
+
+Types
+-----
+
+Ask people to shout out the types before doing it
+
+    type(1)
+    type(1.0)
+    type("abc")
+
+
+Variables
+---------
+    myname = "Julia"
+    myage = 24
+
+    print myname
+    print myage
+
+Strings
+-------
+    firstname = "Julia"
+    lastname = "Evans"
+
+    wholename = firstname + " " + lastname
+    print wholename
+    # ask what this is going to return
+    len(wholename)
+
+How do we get the length of a string?
+
+Booleans
+--------
+    True
+    False
+    myage = 24
+    if age < 13:
+       print "child"
+    elif age < 20:
+       print "teenager"
+    else:
+       print "adult"
+
+Functions
+---------
+
+  def add(x, y):
+      return x + y
+
+  add(2, 3)
+  add(4, 5)
+
+  def print_bio(name, age):
+      print name + " is " + str(age) + " years old"
+      if age > 12 and age < 20:
+          print name + " is a teenager"
+      elif age >= 20:
+          print name + " is an adult"
+
+  print_bio("Jack", 23)
+  print_bio("Jill", 13)
+  print_bio("Steve", 12)
+
+Part 2: Lists
+=============
+
+1) Why?
+
+Let's say you need a program to compute a student's average grade.
+Students have completed three homework exercises so far. 
+
+    hw1 = 95
+    hw2 = 80
+    hw3 = 50
+
+Here's a function that will get the average:
+
+    def average(hw1, hw2, hw3):
+        return (hw1 + hw2 + hw3) / 3
+
+See the problem yet? What if there's a quiz and another homework
+assignment?
+
+   hw4 = 30
+   quiz = 50
+
+   def average(hw1, hw2, hw3, quiz, hw4):
+       return (hw1 + hw2 + hw3 + quiz + hw4) / 5
+
+Uh-oh. It's pretty boring to keep rewriting this function every time we add a
+quiz. We'd like a way to store as many numbers as we want
+
+We can store as many numbers as we want in a list!
+
+  grades = [95, 80, 60, 30, 20]
+
+Accessing elements
+------------------
+
+Accessing individual elements of a list is easy:
+We start counting at 0, so the first element is grades[0]
+There are 5 elements in the list, so the last element is grades[4]
+
+    print grades[0]
+    print grades[4]
+
+We can also access the last element of the list another way. This is
+useful a lot, but you don't have to remember it right now.
+    print grades[-1]
+
+Changing elements
+-----------------
+
+What if the teacher made a mistake when entering Timmy's midterm grades?
+
+  grades = [90, 80, 20]    # He was doing so well!
+
+  print grades[2]
+
+  grades[2] = 60           # Fixed!
+
+  print grades
+
+Averages, improved
+------------------
+Here's one way to compute the average of these five numbers:
+
+    def average(grades):
+        total = (grades[0] + grades[1] + grades[2] + grades[3] + grades[4])
+        return float(total) / 5
+
+(Remember from the tutorial? Python 2 does integer division by
+default, which is *not* what you might expect from calculators or
+elementary school. So you have to convert 'total' to a floating-point
+number to get "real" division.)
+
+    print average(grades)
+
+Okay, that was even longer. We can use a function called sum() to add
+up all the element in grades
+
+    def average(grades):
+        total = sum(grades)
+        return float(total) / 5
+
+    print average(grades)
+
+What if you don't want to count the number yourself?
+
+    print len(grades)
+
+    def average(grades):
+        total = sum(grades)
+        return float(total) / len(grades)
+
+    print average(grades)
+
+Now we can handle grades with different lengths!
+
+    print average([100, 60, 100])
+
+Part 3: Loops
+=============
+
+Really fixing the problem requires a new concept: iteration. Iteration
+just means to do something over and over again on a list of similar
+items.
+
+Iteration in Python is done with a "for loop". Here's a simple example:
+
+    grades = [85, 68, 75]
+    for grade in grades:
+        print "grade =", grade
+
+If inside for
+-------------
+
+We can put anything we want inside a for loop. Like an if statement!
+
+    for grade in grades:
+        if grade >= 60:
+            print grade, ": Pass"
+        else:
+            print grade, ": Fail"
+
+For inside for
+--------------
+
+We can also put FOR LOOPS INSIDE FOR LOOPS
+
+    # get input from audience
+    firstnames = ["Beth", "Joe", "Kamal"]
+    lastnames = ["Doe", "Ranger"]
+
+    for firstname in firstnames:
+        for lastname in lastnames:
+            print "You should name your baby: " + firstname + " " + lastname
+
+Range
+-----
+Let's say we want to sum the numbers from 1 to 100.
+
+Q: How would we do that? # ask for ideas! MAYBE SOMEONE WILL SUGGEST SUM 
+
+    range(5)
+
+What do you notice about this?
+
+    range(1, 5)
+    range(1, 20, 4)
+
+    range(10, 1, -1)
+
+Try to get people to write this number summing loop
+
+    total = 0
+    for i in range(1, 101):
+        total = total + i
+    print total
+
+Do it with 1000000
+
+If you try to sum 1,000,000 numbers it is instant. If you try this
+with 100,000,000 numbers, you might run out of memory (I tried so you
+don't have to )
+
+# range(len)
+
+simpsons = ["Bart", "Marge", "Homer", "Lisa", "Maggie"]
+
+print len(simpsons)
+print range(len(simpsons))
+
+# don't forget to say that we call the number you put in a list to get
+# the thing in the list an index
+
+for i in range(len(simpsons)):
+    print "Index:", i, "| Name:", simpsons[i]
+
+# Okay, but we could have done that more easily.
+
+for i in range(len(simpsons)):
+    simpsons[i] = "Mr. Burns"
+
+print simpsons
+
+While loops
+-----------
+
+While loops repeat until you tell them to stop.
+
+
+    x = 0
+    while True:
+        x = x + 2
+
+I'm going to press Ctrl+C to stop this. Ctrl+C is very useful for
+stopping things that are going wrong
+
+    print x
+
+    while False:
+        print "This never gets printed"
+
+    x = 10
+
+    while x > 0:
+        print "x is", x
+        x = x - 1
+
+COMPlICATED EXAMPLE! (stop me if it doesn't make sense PLEASE)
+
+We want to find out how many numbers we need to add up to more than 59
+
+    total = 0
+    inc = 0
+    while total < 59:
+        inc = inc + 1
+        total = total + inc
+        print "Total so far", total
+
+    print inc
+We needed 11 numbers
+
+Break
+-----
+
+Remember this loop?
+    x = 0
+    while True:
+        x = x + 2
+
+
+We'll do the same thing, except tell it to stop when x gets too big.
+Give me a big number!
+    x = 0
+    while True:
+        x = x + 2
+        if x > 100000000:
+            break
+    print x
+
+REALLY FUN PART: raw_input()
+----------------------------
+
+    raw_input("What is your name? ")
+
+Let's put this in a function
+
+    def say_hello():
+        name = raw_input("What is your name? ")
+        print "Hello " + name + "!"
+
+Okay guys that was a lot of things. Let's take a break :)
+
+
