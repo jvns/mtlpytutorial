@@ -5,28 +5,27 @@ Modules
 * we especially hate fixing the same bug multiple times
 * in other words, we are really big on *reusing* code
 
-* you've already seen the most basic element of code reuse:
+* now you've already seen the most basic element of code reuse:
   the function
 * functions let you store one sequence of instructions and
   use it again later, possibly many times
 * the functions we've seen so far all live in the same
-  file as the code calling them -- one script
+  file as the code calling them -- it's all one script
 * but typically, programmers write many scripts -- each one to do
   one particular task
 * so how do you reuse code between different scripts?
-* the answer: modules!
+* well, that's what modules are for
 
-* what's even better is you don't have to write your own modules
-  to benefit from code reuse
-* Python ships with hundreds of useful modules in its standard library
+* even better than reusing your own code, Python ships with hundreds
+  of useful modules in its standard library
 * and there are tens of thousands more out there on the Internet that
   you can use
 * so even if you never write a single module of your own, you need to
   know about modules
 
-* let's take a look at one handy, easy-to-use module in Python's
-  standard library: it's called random
-* first thing you need to know about is importing modules
+* let's take a look at one handy module in Python's standard library:
+  it's called random, and it's all about generating random numbers
+* the first thing you need to learn is how to *import* a module
 
     import random
 
@@ -34,46 +33,39 @@ Modules
 
     print random
 
-  See: import defines a new name, just like assigning a variable or
-  defining a function. A name references something you can print, in
-  this case a module.
+  See what happened? import defines a new name, just like assigning a
+  variable or defining a function. A name just references something
+  you can print -- in this case a module.
 
-* before we go too far into this, I want you to lookup this module
-  in the standard library documentation. This is a gold mine of
-  information.
+* another thing you can do with a module is get help on it:
 
-    [web http://docs.python.org/release/2.7/]
+    help(random)
 
-  By the way, if you're running a different major version -- 2.6, say
-  -- you should read the docs for that version. It's really annoying
-  reading about features that don't exist in the version you're using.
+  Scroll down to the very bottom to find the good stuff -- under
+  "functions".
 
-* Once you've got that page loaded, look for "Global Module Index" and
-  follow that link, then go down to "r" and click on "random", since
-  that's the module we want to learn about
+  That only works in an interactive Python session, by the way.
 
-* OK, good enough. Don't get sucked into reading that; all you'll
-  learn is that the guy who wrote the random module is a math geek par
-  excellence, and that he knows far, far more about random number
-  generation than you or I ever will. That's a *good thing*: it means
-  you can safely use this code in your application without worrying
-  about how good it is. It's good. That's why it's in the standard
-  library.
+* The most commonly used functions in the random module are random,
+  randint, choice, and shuffle. The other stuff is just there for
+  hardcore math geeks and scientists who care deeply about random
+  numbers. Honestly, I don't even know what a beta distribution is!
 
-* Instead, here's a tiny example of using the random module
+* here's a tiny example of using the random module
 
     print random.randint(1, 10)
     print random.randint(1, 10)
     print random.randint(1, 10)
 
-* And here's how to get a short explanation:
+* Oh yeah, you can get help on an individual function as well as a
+  whole module:
 
     help(random.randint)
 
-* Great. Turns out that generating random integers is important, but
-  it's usually not what you really want to do. Usually you have a list
-  of items and you want to do something random to them. Like, say you've
-  got this rack of letters in a Scrabble game:
+* That's nice. It turns out that generating random integers is
+  important, but it's usually not what you really want to do. Usually
+  you have a list of items and you want to do something random to
+  them. Like, say you've got this rack of letters in a Scrabble game:
 
     letters = ['E', 'P', 'R', 'U', 'L', 'A', 'E']
 
@@ -86,3 +78,52 @@ Modules
   or, you want to pick one letter at random:
 
     random.choice(letters)
+
+* So let's put this stuff together and make the tiniest, simplest
+  computer game ever. Here's the idea: you need to practice memorizing
+  capital cities for your grade 3 geography course. And don't tell me
+  you've already passed grade 3; a little review never killed anyone.
+
+* here's a live demo of the game:
+
+    python capitals.py
+
+* So: how does this work? Let's open up the script and take a look.
+  You should already have downloaded the script last night, so
+  fire up your text editor and open capitals.py.
+
+    gedit capitals.py
+
+* First is the data: obviously the program has to know what the right
+  answers are, and we use a dictionary for that. The keys are the
+  provinces and territories, and the values are the capital cities.
+
+* Next up: we import the random module. Not much point to a game with
+  no randomness, is there?
+
+* Finally, the main loop. Let's go over it one line at a time
+  - capitals_dict.keys() returns a list of the keys of the dictionary,
+    i.e. names of province and territories; we're going to pick five
+    random elements from that list
+  - to do that, we start a loop, but this one is a little different
+    from other loops we've seen, since it uses the range() function
+    rather than a list
+  - let's pop over to an interactive prompt to demonstrate:
+
+      range(5)
+
+    see: range() just returns a list of integers, which we then loop
+    over ... so at its heart, this loop really is the same as the
+    other loops we've seen!
+  - except that we don't actually care about the contents of the list;
+    all we care about is the fact that we run the loop 5 times
+  - now we're inside the loop, and we pick one province or territory
+    at random
+  - then we lookup the right answer: the value corresponding to this key
+  - next up, here's another new trick: getting input from the user
+    with raw_input()
+  - this is actually very rare in real-life code, but it's the simplest
+    way to interact with the user at the console
+  - so now we have the user's answer, and we have the correct answer:
+    all that's left is to compare them and tell the user how they did
+  - and that's what this "if" statement does
