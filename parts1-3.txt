@@ -65,22 +65,22 @@ Booleans & Conditionals
 Functions
 ---------
 
-  def add(x, y):
-      return x + y
+    def add(x, y):
+        return x + y
 
-  add(2, 3)
-  add(4, 5)
+    add(2, 3)
+    add(4, 5)
 
-  def print_bio(name, age):
-      print name + " is " + str(age) + " years old"
-      if age > 12 and age < 20:
-          print name + " is a teenager"
-      elif age >= 20:
-          print name + " is an adult"
+    def print_bio(name, age):
+        print name + " is " + str(age) + " years old"
+        if age > 12 and age < 20:
+            print name + " is a teenager"
+        elif age >= 20:
+            print name + " is an adult"
 
-  print_bio("Jack", 23)
-  print_bio("Jill", 13)
-  print_bio("Steve", 12)
+    print_bio("Jack", 23)
+    print_bio("Jill", 13)
+    print_bio("Steve", 12)
 
 Part 2: Lists
 =============
@@ -102,18 +102,18 @@ Here's a function that will get the average:
 See the problem yet? What if there's a quiz and another homework
 assignment?
 
-   hw4 = 30
-   quiz = 50
+    hw4 = 30
+    quiz = 50
 
-   def average(hw1, hw2, hw3, quiz, hw4):
-       return (hw1 + hw2 + hw3 + quiz + hw4) / 5
+    def average(hw1, hw2, hw3, quiz, hw4):
+        return (hw1 + hw2 + hw3 + quiz + hw4) / 5
 
 Uh-oh. It's pretty boring to keep rewriting this function every time we add a
 quiz. We'd like a way to store as many numbers as we want
 
 We can store as many numbers as we want in a list!
 
-  grades = [95, 80, 60, 30, 20]
+    grades = [95, 80, 60, 30, 20]
 
 Accessing elements
 ------------------
@@ -249,20 +249,20 @@ If you try to sum 1,000,000 numbers it is instant. If you try this
 with 100,000,000 numbers, you might run out of memory (I tried so you
 don't have to )
 
-# range(len)
+Let's talk about range(len)
 
-simpsons = ["Bart", "Marge", "Homer", "Lisa", "Maggie"]
+    simpsons = ["Bart", "Marge", "Homer", "Lisa", "Maggie"]
 
-print len(simpsons)
-print range(len(simpsons))
+    print len(simpsons)
+    print range(len(simpsons))
 
-# don't forget to say that we call the number you put in a list to get
-# the thing in the list an index
+don't forget to say that we call the number you put in a list to get
+the thing in the list an index
 
     for i in range(len(simpsons)):
         print "Index:", i, "| Name:", simpsons[i]
 
-# Okay, but we could have done that more easily.
+Okay, but we could have done that more easily.
 
     for i in range(len(simpsons)):
         simpsons[i] = "Mr. Burns"
@@ -311,6 +311,7 @@ Break
 -----
 
 Remember this loop?
+
     x = 0
     while True:
         x = x + 2
@@ -318,6 +319,7 @@ Remember this loop?
 
 We'll do the same thing, except tell it to stop when x gets too big.
 Give me a big number!
+
     x = 0
     while True:
         x = x + 2
