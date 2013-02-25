@@ -1,0 +1,36 @@
+Hello again!
+
+Thanks for coming to the Montreal Python Workshop this weekend. (If you signed up but didn't make it, we're sorry we missed you. Maybe next time!)
+
+First of all, congratulations! You stuck at it, learned the core concepts of programming, and started making software. That's pretty impressive for a day-and-a-half of effort.
+
+If you have a few minutes to fill out our exit survey, that would be
+much appreciated:
+
+  https://docs.google.com/forms/d/1pJOebyhvRdTmB_ZFtp862-w4EC6ldV9alMjths73y-g/viewform
+
+The information you provide there will help us make the *next* Montreal Python Workshop even better.
+
+To keep learning, I would start with "Learn Python the Hard Way":
+
+  http://learnpythonthehardway.org/
+
+This is a tutorial written for complete beginners, just like most of you were two days ago. So there is some overlap with the material we covered this weekend. That's OK! The only way to learn something is to learn it a couple of times, with lots of practice.
+
+If you prefer something a touch more advanced, the official Python tutorial is good:
+
+  http://docs.python.org/2/tutorial/
+
+...but it's really aimed at programmers familiar with other languages who need to learn Python. You have been warned. ;-)
+
+There are lots of other resources linked from this page:
+
+  http://wiki.python.org/moin/BeginnersGuide/NonProgrammers
+
+Finally, local events: we're hoping to have a Python Night early in March. You can hack on your own stuff, get help, give help, and just generally become a better programmer. Keep an eye on the Montréal-Python web site:
+
+  http://montrealpython.org/
+
+or follow us on Twitter (@mtlpy):
+
+  https://twitter.com/mtlpy
