@@ -52,6 +52,7 @@ How do we get the length of a string?
 
 Booleans & Conditionals
 -----------------------
+
     True
     False
     myage = 24
@@ -61,6 +62,12 @@ Booleans & Conditionals
        print "teenager"
     else:
        print "adult"
+
+    mystr = 'dogcatdog'
+    if 'dog' in mystr and 'cat' in mystr:
+        print "animals"
+    elif 'dog' in mystr:
+        print "only dogs"
 
 Functions
 ---------
@@ -81,6 +88,7 @@ Functions
     print_bio("Jack", 23)
     print_bio("Jill", 13)
     print_bio("Steve", 12)
+
 
 Part 2: Lists
 =============
@@ -135,7 +143,7 @@ useful a lot, but you don't have to remember it right now.
 Changing elements
 -----------------
 
-What if the teacher made a mistake when entering Timmy's midterm grades?
+What if the teacher made a mistake when entering Batman's midterm grades?
 
     grades = [90, 80, 20]    # He was doing so well!
 
@@ -147,6 +155,7 @@ What if the teacher made a mistake when entering Timmy's midterm grades?
 
 Averages, improved
 ------------------
+TODO: this was a LOT of typing.
 Here's one way to compute the average of these five numbers:
 
     def average(grades):
@@ -183,6 +192,21 @@ Now we can handle grades with different lengths!
 
     print average_best([100, 60, 100])
 
+NEW THING: raw_input()
+----------------------
+
+    raw_input("What is your name? ")
+
+Let's put this in a function
+
+    def say_hello():
+        name = raw_input("What is your name? ")
+        print "Hello " + name + "!"
+
+Okay guys that was a lot of things. Let's take a break, and do some
+codingbat exercises.
+
+
 Part 3: Loops
 =============
 
@@ -190,6 +214,47 @@ Iteration just means to do something over and over again on a list of
 similar items. This means that if you want to do something a million or
 ten million times, you can (really!). Doing 10,000,000 things takes
 less than a second, even on my 5-year-old laptop.
+
+While loops
+-----------
+
+While loops repeat until you tell them to stop.
+
+
+    x = 0
+    while True:
+        x = x + 2
+
+I'm going to press Ctrl+C to stop this. Ctrl+C is very useful for
+stopping things that are going wrong
+
+    print x
+
+    while False:
+        print "This never gets printed"
+
+    x = 10
+
+    while x > 0:
+        print "x is", x
+        x = x - 1
+
+COMPlICATED EXAMPLE! (stop me if it doesn't make sense PLEASE)
+
+We want to find out how many numbers we need to add up to more than 59
+
+    total = 0
+    inc = 0
+    while total < 59:
+        inc = inc + 1
+        total = total + inc
+        print "Total so far", total
+
+    print inc
+We needed 11 numbers
+
+For loops
+---------
 
 Iteration in Python is done with a "for loop". Here's a simple example:
 
@@ -269,43 +334,7 @@ Okay, but we could have done that more easily.
 
 print simpsons
 
-While loops
------------
 
-While loops repeat until you tell them to stop.
-
-
-    x = 0
-    while True:
-        x = x + 2
-
-I'm going to press Ctrl+C to stop this. Ctrl+C is very useful for
-stopping things that are going wrong
-
-    print x
-
-    while False:
-        print "This never gets printed"
-
-    x = 10
-
-    while x > 0:
-        print "x is", x
-        x = x - 1
-
-COMPlICATED EXAMPLE! (stop me if it doesn't make sense PLEASE)
-
-We want to find out how many numbers we need to add up to more than 59
-
-    total = 0
-    inc = 0
-    while total < 59:
-        inc = inc + 1
-        total = total + inc
-        print "Total so far", total
-
-    print inc
-We needed 11 numbers
 
 Break
 -----
@@ -326,18 +355,5 @@ Give me a big number!
         if x > 100000000:
             break
     print x
-
-REALLY FUN PART: raw_input()
-----------------------------
-
-    raw_input("What is your name? ")
-
-Let's put this in a function
-
-    def say_hello():
-        name = raw_input("What is your name? ")
-        print "Hello " + name + "!"
-
-Okay guys that was a lot of things. Let's take a break :)
 
 
