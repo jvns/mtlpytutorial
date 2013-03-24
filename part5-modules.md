@@ -1,14 +1,12 @@
 Modules
 =======
 
-* programmers hate writing the same code multiple times
-* we especially hate fixing the same bug multiple times
-* in other words, we are really big on *reusing* code
-
+* Who here likes doing more work than they have to?
+* Yeah, not me. Programmers are really big on *reusing* code
 * now you've already seen the most basic element of code reuse:
   the function
-* functions let you store one sequence of instructions and
-  use it again later, possibly many times
+* functions let you store some code and use it again later, possibly 
+  many times
 * the functions we've seen so far all live in the same
   file as the code calling them -- it's all one script
 * but typically, programmers write many scripts -- each one to do
@@ -31,7 +29,7 @@ Modules
 
 * huh. that didn't do anything. oh wait, actually it did:
 
-    print random
+    random
 
   See what happened? import defines a new name, just like assigning a
   variable or defining a function. A name just references something
@@ -119,7 +117,7 @@ Modules
     all we care about is the fact that we run the loop 5 times
   - now we're inside the loop, and we pick one province or territory
     at random
-  - then we lookup the right answer: the value corresponding to this key
+  - then we look up the right answer: the value corresponding to this key
   - next up, here's another new trick: getting input from the user
     with raw_input()
   - this is actually very rare in real-life code, but it's the simplest
