@@ -28,8 +28,8 @@ Variables
     x = 2
     y = 3
     "=" denotes assignment.  It does not mean "equals" as in maths.
-    You're giving (assigning) a value to a variable.
-    You can change this value (hence "variable").
+    Use http://pythontutor.com/visualize.html
+    to show how different names can point to the same object.
 
 What can we do with x and y?
 
