@@ -27,6 +27,9 @@ Variables
 ---------
     x = 2
     y = 3
+    "=" denotes assignment.  It does not mean "equals" as in maths.
+    You're giving (assigning) a value to a variable.
+    You can change this value (hence "variable").
 
 What can we do with x and y?
 
@@ -45,16 +48,30 @@ Strings
     print wholename
 
 How do we get the length of a string?
-# ask what this is going to return
+    len(firstname)
 
+# Ask what this is going to return:
     len(wholename)
 
+COOL THING: raw_input()
+----------------------
+
+    raw_input("What is your name? ")
+    Store the value in a variable:
+    >>> firstname = raw_input("What is your name? ")
+    What is your name? Marianne
+    >>> firstname
+    'Marianne'
 
 Booleans & Conditionals
 -----------------------
 
     True
     False
+    # Introduce operator "==" for comparison, along with "<=" and ">="?
+    # Comparing different types in Python 2 does not make much sense.
+    # This is fixed in Python 3 (returning errors).
+
     myage = 24
     if age < 13:
        print "child"
@@ -77,6 +94,13 @@ Functions
 
     add(2, 3)
     add(4, 5)
+
+    # Let's use raw_input in a function:
+
+    def say_hello():
+        name = raw_input("What is your name? ")
+        print "Hello " + name + "!"
+
 
     def print_bio(name, age):
         print name + " is " + str(age) + " years old"
@@ -192,16 +216,6 @@ Now we can handle grades with different lengths!
 
     print average_best([100, 60, 100])
 
-NEW THING: raw_input()
-----------------------
-
-    raw_input("What is your name? ")
-
-Let's put this in a function
-
-    def say_hello():
-        name = raw_input("What is your name? ")
-        print "Hello " + name + "!"
 
 Okay guys that was a lot of things. Let's take a break, and do some
 codingbat exercises.
@@ -219,7 +233,8 @@ While loops
 -----------
 
 While loops repeat until you tell them to stop.
-
+You may need to read lines in a file while there are lines to read...
+Or while you haven't found a given word (until you find it).
 
     x = 0
     while True:
@@ -355,5 +370,4 @@ Give me a big number!
         if x > 100000000:
             break
     print x
-
 
