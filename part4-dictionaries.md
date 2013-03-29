@@ -29,6 +29,8 @@ it!
 Now I've got a dictionary where I can look up the meaning of four
 different words.
 
+*Exercise*: Make your own dictionary! Put anything you want in it.
+
 accessing elements
 ------------------
 
@@ -49,6 +51,8 @@ You can add new elements to a dictionary:
     meaning["ruby"] = "attractive semi-precious gem"
     meaning["macintosh"] = "a variety of apple"
 
+*Exercise*: Add an element to your dictionary!
+
 how many?
 ---------
 
@@ -56,6 +60,8 @@ Just like with strings and lists, you can use the len() function to
 find out how big a dictionary is:
 
     len(meaning)
+
+*Exercise*: Add an element to your dictionary!
 
 replacing elements
 ------------------
@@ -111,6 +117,8 @@ score is
         score = scrabble_scores[player]
         print player + " has a current score of " + score
 
+*Exercise*: Print out every element in your dictionary
+
 methods
 -------
 
@@ -128,25 +136,28 @@ Another method, which is complementary to keys(), is values():
     print band.values()
     print meaning.values()
 
- 
+*Exercise*: Get the keys and values from your dictionary
+
 .keys() and .values() are called *methods* They let you get more information
-about a dictionary. 
+about a dictionary.
 
 Python has a really useful 'help' function, that lets you find out other
 things about a dictionary.
 
     help(meaning)
 
-Ignore all the things that begin with __ for now. This is really confusing.
-Can anyone guess what this might mean? Okay, I want everyone to go through
-this and find one new method to use, and use it.
+Ignore all the things that begin with __ for now. 
+
+(find a method that actually makes sense) Can anyone guess what this
+might mean? Okay, I want everyone to go through this and find one new
+method to use, and use it.
 
 documentation
 -------------
 
 A quick note about documentation:
 
-Who thought that help() page was easy to understand? Who found it confusing? 
+Who thought that help() page was easy to understand? Who found it confusing?
 Let people give some feedback.
 
 (go to browser, and google "python dictionaries")
@@ -155,8 +166,9 @@ A lot of the resources about programming languages can be really hard to read.
 They are written by people who have been programming for a long time, and
 they're usually aimed at people who already know how to program. Do not worry
 if you Google something and it doesn't make any sense to you; it's probably
-not written with you in mind (even if it says it's a tutorial!). 
-Instead, try searching for "dictionaries tutorial".
+not written with you in mind (even if it says it's a tutorial!)
+Instead, try searching for "dictionaries tutorial". We have a short list
+of tutorials on the wiki.
 
 TODO: make a list of resources for continuing learning Python on the website,
 and point people to that.
