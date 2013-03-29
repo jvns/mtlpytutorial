@@ -24,12 +24,16 @@ Modules
 * let's take a look at one handy module in Python's standard library:
   it's called random, and it's all about generating random numbers
 * the first thing you need to learn is how to *import* a module
-
+    
+    ```python
     import random
+    ```
 
 * huh. that didn't do anything. oh wait, actually it did:
 
+    ```python
     random
+    ```
 
   See what happened? import defines a new name, just like assigning a
   variable or defining a function. A name just references something
@@ -37,7 +41,9 @@ Modules
 
 * another thing you can do with a module is get help on it:
 
+    ```python
     help(random)
+    ```
 
   Scroll down to the very bottom to find the good stuff -- under
   "functions".
@@ -51,31 +57,41 @@ Modules
 
 * here's a tiny example of using the random module
 
+    ```python
     print random.randint(1, 10)
     print random.randint(1, 10)
     print random.randint(1, 10)
+    ```
 
 * Oh yeah, you can get help on an individual function as well as a
   whole module:
 
+    ```python
     help(random.randint)
+    ```
 
 * That's nice. It turns out that generating random integers is
   important, but it's usually not what you really want to do. Usually
   you have a list of items and you want to do something random to
   them. Like, say you've got this rack of letters in a Scrabble game:
 
+    ```python
     letters = ['E', 'P', 'R', 'U', 'L', 'A', 'E']
+    ```
 
   and you want to see some different orderings of this rack:
 
+    ```python
     random.shuffle(letters) ; print letters
     random.shuffle(letters) ; print letters
     random.shuffle(letters) ; print letters
+    ```
 
   or, you want to pick one letter at random:
 
+    ```python
     random.choice(letters)
+    ```
 
 * So let's put this stuff together and make the tiniest, simplest
   computer game ever. Here's the idea: you need to practice memorizing
@@ -84,13 +100,17 @@ Modules
 
 * here's a live demo of the game:
 
+    ```
     python capitals.py
+    ```
 
 * So: how does this work? Let's open up the script and take a look.
   You should already have downloaded the script last night, so
   fire up your text editor and open capitals.py.
 
+    ```
     gedit capitals.py
+    ```
 
 * First is the data: obviously the program has to know what the right
   answers are, and we use a dictionary for that. The keys are the
@@ -108,9 +128,10 @@ Modules
     rather than a list
   - let's pop over to an interactive prompt to demonstrate:
 
-      range(5)
-
-    see: range() just returns a list of integers, which we then loop
+        ```
+        range(5)
+        ```    
+  - So range() really just gives a list of numbers to loop over
     over ... so at its heart, this loop really is the same as the
     other loops we've seen!
   - except that we don't actually care about the contents of the list;
