@@ -57,7 +57,7 @@ COOL THING: raw_input()
 ----------------------
 
     raw_input("What is your name? ")
-    Store the value in a variable:
+    Variable/name 'firstname' takes standard input:
     >>> firstname = raw_input("What is your name? ")
     What is your name? Marianne
     >>> firstname
@@ -218,7 +218,7 @@ Now we can handle grades with different lengths!
 
 
 Okay guys that was a lot of things. Let's take a break, and do some
-codingbat exercises.
+CodingBat exercises.
 
 
 Part 3: Loops
@@ -232,7 +232,7 @@ less than a second, even on my 5-year-old laptop.
 While loops
 -----------
 
-While loops repeat until you tell them to stop.
+'While' loops repeat until you tell them to stop.
 You may need to read lines in a file while there are lines to read...
 Or while you haven't found a given word (until you find it).
 
@@ -241,7 +241,7 @@ Or while you haven't found a given word (until you find it).
         x = x + 2
 
 I'm going to press Ctrl+C to stop this. Ctrl+C is very useful for
-stopping things that are going wrong
+stopping things that are going wrong.
 
     print x
 
@@ -254,7 +254,7 @@ stopping things that are going wrong
         print "x is", x
         x = x - 1
 
-COMPlICATED EXAMPLE! (stop me if it doesn't make sense PLEASE)
+COMPLICATED EXAMPLE! (stop me if it doesn't make sense PLEASE)
 
 We want to find out how many numbers we need to add up to more than 59
 
