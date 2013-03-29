@@ -10,7 +10,7 @@ We can use Python like a calculator!
     10 + 5
     2 * 3
     4 / 2
-    1 / 2 # unexpected!
+    1 / 2  # unexpected!
     1.0 / 2
 
 Types
@@ -57,7 +57,7 @@ COOL THING: raw_input()
 ----------------------
 
     raw_input("What is your name? ")
-    Variable/name 'firstname' takes standard input:
+    Variable/name 'firstname' gets what's typed on standard input:
     >>> firstname = raw_input("What is your name? ")
     What is your name? Marianne
     >>> firstname
@@ -103,11 +103,11 @@ Functions
 
 
     def print_bio(name, age):
-        print name + " is " + str(age) + " years old"
+        print name, "is", age, "years old"
         if age > 12 and age < 20:
-            print name + " is a teenager"
+            print name, "is a teenager"
         elif age >= 20:
-            print name + " is an adult"
+            print name, "is an adult"
 
     print_bio("Jack", 23)
     print_bio("Jill", 13)
@@ -232,7 +232,7 @@ less than a second, even on my 5-year-old laptop.
 While loops
 -----------
 
-'While' loops repeat until you tell them to stop.
+'while' loops repeat until you tell them to stop.
 You may need to read lines in a file while there are lines to read...
 Or while you haven't found a given word (until you find it).
 
